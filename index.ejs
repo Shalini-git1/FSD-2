@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do App</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Simple To Do App</h1>
+
+    <!-- Add Task Form -->
+    <form action="/add" method="POST">
+        <input name="task" placeholder="Enter task" />
+        <button>Add</button>
+    </form>
+
+    <!-- Task List -->
+    <ul>
+        <% todos.forEach(function(todo, index){ %>
+            <li>
+                <%= todo %>
+                <a class="delete" href="/delete/<%= index %>">Delete</a>
+            </li>
+        <% }) %>
+    </ul>
+
+</div>
+
+</body>
+</html>
